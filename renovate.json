@@ -10,6 +10,24 @@
       "matchStrings": ["ENV BATS_CORE_VERSION=(?<currentValue>.*?)\\n"],
       "depNameTemplate": "bats-core/bats-core",
       "datasourceTemplate":"github-releases"
+    },
+    {
+      "fileMatch": "^Dockerfile$",
+      "matchStrings": ["ENV BATS_ASSERT_VERSION=(?<currentValue>.*?)\\n"],
+      "depNameTemplate": "bats-core/bats-assert",
+      "datasourceTemplate":"github-releases"
+    },
+    {
+      "fileMatch": "^Dockerfile$",
+      "matchStrings": ["ENV BATS_FILE_VERSION=(?<currentValue>.*?)\\n"],
+      "depNameTemplate": "bats-core/bats-file",
+      "datasourceTemplate":"github-releases"
+    },
+    {
+      "fileMatch": "^Dockerfile$",
+      "matchStrings": ["ENV BATS_SUPPORT_VERSION=(?<currentValue>.*?)\\n"],
+      "depNameTemplate": "bats-core/bats-support",
+      "datasourceTemplate":"github-releases"
     }
   ]
 }
