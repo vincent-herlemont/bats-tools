@@ -1,0 +1,12 @@
+on: [push]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    name: Publish
+    steps:
+      - name: Checkout
+        run: |
+          echo ${{ secrets.CR_PAT }} | docker login ghcr.io --username phanatic --password-stdin
+          docker build . -t ghcr.io/vincent-herlemont/bats-tools:latest
+          docker push ghcr.io/vincent-herlemont/bats-tools:latest
