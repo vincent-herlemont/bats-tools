@@ -4,7 +4,7 @@ on:
       - published
 
 env:
-  IMAGE: ghcr.io/vincent-herlemont/bats-tools
+  IMAGE_NAME: ghcr.io/vincent-herlemont/bats-tools
 
 jobs:
   publish:
@@ -16,15 +16,17 @@ jobs:
       - name: Set env
         run: |
           RELEASE_VERSION=${GITHUB_REF#refs/*/}
-          RELEASE_DOCKER_TAG=${RELEASE_VERSION:v}
-          echo "RELEASE_VERSION=${RELEASE_VERSION}" >> $GITHUB_ENV
-          echo "RELEASE_DOCKER_TAG=${RELEASE_DOCKER_TAG}" >> $GITHUB_ENV
+          RELEASE_DOCKER_TAG=${RELEASE_VERSION:1}
+          IMAGE=${IMAGE_NAME}:${RELEASE_DOCKER_TAG}
+          IMAGE_LATEST=${IMAGE_NAME}:latest
+          echo "IMAGE=${IMAGE}" >> $GITHUB_ENV
+          echo "LATEST_IMAGE=${LATEST_IMAGE}" >> $GITHUB_ENV
       - name: Build
         run: |
-          docker build . -t ${IMAGE}:${RELEASE_DOCKER_TAG}
-          docker build . -t ${IMAGE}:latest
+          docker build . -t ${IMAGE}
+          docker build . -t ${IMAGE_LATEST}
       - name: Publish
         run: |
           echo ${{ secrets.CR_PAT }} | docker login ghcr.io --username phanatic --password-stdin
-          docker push ${IMAGE}:${RELEASE_VERSION}
-          docker push ${IMAGE}:latest
+          docker push ${IMAGE}
+          docker push ${IMAGE_LATEST}
