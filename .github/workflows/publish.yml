@@ -24,7 +24,7 @@ jobs:
       - name: Build
         run: |
           docker build . -t ${IMAGE}
-          docker build . -t ${IMAGE_LATEST}
+          docker build . -t ${LATEST_IMAGE}
       - name: Publish
         run: |
           echo ${{ secrets.CR_PAT }} | docker login ghcr.io --username phanatic --password-stdin
