@@ -1,11 +1,14 @@
 # Bats tools in a docker image
 
+Images available, see registry: [ghcr.io/vincent-herlemont/bats-tools](https://github.com/users/vincent-herlemont/packages/container/bats-tools/versions)
+
+Run bats:
 ```bash
-$> docker run ghcr.io/vincent-herlemont/bats-tools:1.0.0 bats
+$> docker run ghcr.io/vincent-herlemont/bats-tools:latest bats
 ...
 ```
 
-### Available tools and versions
+### Tools available and version of tools
 
 See: [Dockerfile#L12-L15](Dockerfile#L12-L15)
 
