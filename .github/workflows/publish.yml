@@ -14,10 +14,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Set env
-        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+        run: |
+          RELEASE_VERSION=${GITHUB_REF#refs/*/}
+          RELEASE_DOCKER_TAG=${RELEASE_VERSION:v}
+          echo "RELEASE_VERSION=${RELEASE_VERSION}" >> $GITHUB_ENV
+          echo "RELEASE_DOCKER_TAG=${RELEASE_DOCKER_TAG}" >> $GITHUB_ENV
       - name: Build
         run: |
-          docker build . -t ${IMAGE}
+          docker build . -t ${IMAGE}:${RELEASE_DOCKER_TAG}
+          docker build . -t ${IMAGE}:latest
       - name: Publish
         run: |
           echo ${{ secrets.CR_PAT }} | docker login ghcr.io --username phanatic --password-stdin
