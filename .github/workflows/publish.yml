@@ -1,7 +1,4 @@
-on:
-  push:
-    tags:
-      - '*'
+on: release
 
 env:
   IMAGE: ghcr.io/vincent-herlemont/bats-tools
