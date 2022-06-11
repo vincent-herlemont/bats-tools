@@ -10,7 +10,7 @@ $> docker run ghcr.io/vincent-herlemont/bats-tools:latest bats
 
 ### Tools available and version of tools
 
-See: [Dockerfile#L12-L15](Dockerfile#L12-L15)
+See: [Dockerfile#L12-L15](Dockerfile#L12-L19)
 
 ### How to use it ?
 
