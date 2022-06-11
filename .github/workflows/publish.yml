@@ -1,4 +1,7 @@
-on: release
+on:
+  release:
+    types:
+      - published
 
 env:
   IMAGE: ghcr.io/vincent-herlemont/bats-tools
