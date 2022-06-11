@@ -1,4 +1,4 @@
-# Bats tools in a docker image
+# [Bats tools](https://github.com/bats-core) in a docker image
 
 Images available, see registry: [ghcr.io/vincent-herlemont/bats-tools](https://github.com/users/vincent-herlemont/packages/container/bats-tools/versions)
 
