@@ -1,4 +1,12 @@
 {
   "extends": [ "config:base" ],
-  "baseBranches": ["main"]
+  "baseBranches": ["main"],
+  "regexManagers": [
+    {
+      "fileMatch": "^Dockerfile$",
+      "matchStrings": ["ENV BATS_CORE_VERSION=(?<currentValue>.*?)\\n"],
+      "depNameTemplate": "bats-core/bats-core",
+      "datasourceTemplate":"github-releases"
+    }
+  ]
 }
