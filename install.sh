@@ -12,6 +12,7 @@ if [[ -z $URL ]]; then
   echo "Please provide an url of the archive .tar.gz."
 fi
 
+
 file="$NAME.tar.gz"
 curl -L "$URL" --output "$file"
 mkdir "$NAME"
