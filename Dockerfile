@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
 RUN apt update
-RUN apt install -y git curl
+RUN apt install -y curl
 
 # Install bats
 ENV BATS="/etc/bats"
@@ -16,5 +16,7 @@ RUN ./install.sh bats-support https://github.com/bats-core/bats-support/archive/
 RUN rm install.sh
 
 ENV PATH=$PATH:/$BATS/bats-core/bin/
+
+RUN apt clean
 
 WORKDIR /
