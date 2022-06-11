@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/vincent-herlemont/bats-tools/compare/v1.3.0...v1.4.0) (2022-06-11)
+
+
+### Features
+
+* Empty release 5. ([2a72404](https://github.com/vincent-herlemont/bats-tools/commit/2a72404cea35c1b7b746c7890ab28fb432e50b2c))
+
 ## [1.3.0](https://github.com/vincent-herlemont/bats-tools/compare/v1.2.0...v1.3.0) (2022-06-11)
 
 
