@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/vincent-herlemont/bats-tools/compare/v1.0.0...v1.0.1) (2022-07-25)
+
+
+### Bug Fixes
+
+* empty ([6996027](https://github.com/vincent-herlemont/bats-tools/commit/699602799e0dd82b07c7f137ad04b2c59c4d6ee0))
+
 ## 1.0.0 (2022-06-11)
 
 
