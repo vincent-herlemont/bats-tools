@@ -11,7 +11,7 @@ WORKDIR $BATS
 COPY install.sh .
 ENV BATS_CORE_VERSION=v1.7.0
 RUN ./install.sh bats-core https://github.com/bats-core/bats-core/archive/refs/tags/$BATS_CORE_VERSION.tar.gz
-ENV BATS_ASSERT_VERSION=v2.0.0
+ENV BATS_ASSERT_VERSION=v2.1.0
 RUN ./install.sh bats-assert https://github.com/bats-core/bats-assert/archive/refs/tags/$BATS_ASSERT_VERSION.tar.gz
 ENV BATS_FILE_VERSION=v0.3.0
 RUN ./install.sh bats-file https://github.com/bats-core/bats-file/archive/refs/tags/$BATS_FILE_VERSION.tar.gz
