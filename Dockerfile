@@ -9,7 +9,7 @@ RUN mkdir -p $BATS
 
 WORKDIR $BATS
 COPY install.sh .
-ENV BATS_CORE_VERSION=v1.7.0
+ENV BATS_CORE_VERSION=v1.11.0
 RUN ./install.sh bats-core https://github.com/bats-core/bats-core/archive/refs/tags/$BATS_CORE_VERSION.tar.gz
 ENV BATS_ASSERT_VERSION=v2.0.0
 RUN ./install.sh bats-assert https://github.com/bats-core/bats-assert/archive/refs/tags/$BATS_ASSERT_VERSION.tar.gz
